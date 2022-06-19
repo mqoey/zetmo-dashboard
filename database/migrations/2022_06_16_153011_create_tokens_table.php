@@ -19,6 +19,7 @@ class CreateTokensTable extends Migration
             $table->string('token_number');
             $table->string('amount_paid');
             $table->string('power_bought');
+            $table->string('status')->default('0');
             $table->timestamps();
         });
     }

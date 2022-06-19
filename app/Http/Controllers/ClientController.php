@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Helper\Tokenable;
 
 class ClientController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +18,7 @@ class ClientController extends Controller
     public function index()
     {
         return view('clients.index')
-        ->with('clients', Client::all());
+            ->with('clients', Client::all());
     }
 
     /**
@@ -40,7 +42,7 @@ class ClientController extends Controller
 //        dd($request->all());
         $name = $request->first_name . " " . $request->last_name;
         $email = $request->email;
-        $password = md5($request->password);
+        $password = md5("12345678");
         $address = $request->address;
         $meter_number = $request->meter_number;
 
@@ -51,7 +53,7 @@ class ClientController extends Controller
             'address' => $address,
             'meter_number' => $meter_number,
         ]);
-        return back()->with('success',"Client has been added!!");
+        return back()->with('success', "Client has been added!!");
     }
 
     /**
