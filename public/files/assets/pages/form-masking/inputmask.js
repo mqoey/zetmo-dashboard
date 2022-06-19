@@ -702,7 +702,7 @@
 		}
 
 		return ms;
-	};
+	}
 
 
 	//masking scope
@@ -1547,7 +1547,7 @@
 
 				else
 					getMaskSet().validPositions[pos] = $.extend(true, {}, validTest);
-				;
+
 
 				resetMaskSet(true);
 				return true;

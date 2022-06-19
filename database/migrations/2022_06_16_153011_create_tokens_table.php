@@ -18,6 +18,7 @@ class CreateTokensTable extends Migration
             $table->foreignId('client_id')->constrained('clients');
             $table->string('token_number');
             $table->string('amount_paid');
+            $table->string('power_bought');
             $table->timestamps();
         });
     }

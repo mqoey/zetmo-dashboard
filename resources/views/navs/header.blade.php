@@ -14,7 +14,7 @@
         <div class="navbar-container container-fluid">
             <ul class="nav-left">
                 <li>
-                    <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                    <a href="#!" onclick="toggleFullScreen()" class="waves-effect waves-light">
                         <i class="full-screen feather icon-maximize"></i>
                     </a>
                 </li>
@@ -23,7 +23,7 @@
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('files/assets/images/avatar-4.jpg') }}" class="img-radius"
+                            <img src="{{ asset('files/assets/images/avatar.png') }}" class="img-radius"
                                 alt="User-Profile-Image">
                             <span>{{ Auth::user()->name }}</span>
                             <i class="feather icon-chevron-down"></i>

@@ -68,11 +68,11 @@ if (typeof jQuery === 'undefined') {
                     html: 'Confirm'
                 }
             },
-            onDraw: function() { return; },
-            onSuccess: function() { return; },
-            onFail: function() { return; },
-            onAlways: function() { return; },
-            onAjax: function() { return; }
+            onDraw: function() {  },
+            onSuccess: function() {  },
+            onFail: function() {  },
+            onAlways: function() {  },
+            onAjax: function() {  }
         };
 
         var settings = $.extend(true, defaults, options);
@@ -110,7 +110,7 @@ if (typeof jQuery === 'undefined') {
                     });
                 },
                 editable: function() {
-                    // 
+                    //
                     for (var i = 0; i < settings.columns.editable.length; i++) {
                         var $td = $table.find('tbody td:nth-child(' + (parseInt(settings.columns.editable[i][0]) + 1) + ')');
 
@@ -229,7 +229,7 @@ if (typeof jQuery === 'undefined') {
                 }
             },
             edit: function(td) {
-                // 
+                //
                 Delete.reset(td);
                 // Get table row.
                 var $tr = $(td).parent('tr');
@@ -321,7 +321,7 @@ if (typeof jQuery === 'undefined') {
                 $table.find('.tabledit-delete-button').removeClass('active').blur();
             },
             submit: function(td) {
-                // 
+                //
                 Delete.reset(td);
                 // Enable identifier hidden input.
                 $(td).parent('tr').find('input.tabledit-identifier').attr('disabled', false);
@@ -347,7 +347,7 @@ if (typeof jQuery === 'undefined') {
                  document.getElementById("example-2").deleteRow(a);
             },
             confirm: function(td) {
-                // 
+                //
                 // Reset all cells in edit mode.
                 $table.find('td.tabledit-edit-mode').each(function() {
                     Edit.reset(this);
@@ -463,9 +463,9 @@ if (typeof jQuery === 'undefined') {
              * @param {object} event
              */
             $table.on('click', 'button.tabledit-confirm-button', function(event) {
-                //// 
+                ////
                 if (event.handled !== true) {
-                       
+
 
                     event.preventDefault();
 

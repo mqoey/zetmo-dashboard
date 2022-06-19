@@ -13,6 +13,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('clients', ClientController::class);
     Route::resource('tokens', TokenController::class);
     Route::get('tarrifs', [TarrifController::class, 'index'])->name('tarrifs');
+    Route::post('tarrifs', [TarrifController::class, 'store'])->name('tarrifs');
 });
 
 require __DIR__.'/auth.php';

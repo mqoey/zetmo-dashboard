@@ -17,8 +17,9 @@
                                         <i class="fas fa-users text-c-red f-18"></i>
                                     </div>
                                 </div>
-                                <p class="m-b-0 text-white"><span class="label label-danger m-r-10">+11%</span>From
-                                    Previous Month</p>
+                                <a href="{{route('clients.index')}}">
+                                    <p class="m-b-0 text-white">View More<span class="label label-danger m-r-10">CLIENTS</span></p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -34,8 +35,9 @@
                                         <i class="fas fa-user text-c-blue f-18"></i>
                                     </div>
                                 </div>
-                                <p class="m-b-0 text-white"><span class="label label-primary m-r-10">+12%</span>From
-                                    Previous Month</p>
+                                <a href="{{route('users')}}">
+                                    <p class="m-b-0 text-white">View More<span class="label label-primary m-r-10">USERS</span></p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -51,8 +53,9 @@
                                         <i class="fas fa-money-bill-alt text-c-green f-18"></i>
                                     </div>
                                 </div>
-                                <p class="m-b-0 text-white"><span class="label label-success m-r-10">+52%</span>From
-                                    Previous Month</p>
+                                <a href="{{route('tokens.index')}}">
+                                    <p class="m-b-0 text-white">View More<span class="label label-success m-r-10">TOKENS</span></p>
+                                </a>
                             </div>
                         </div>
                     </div>

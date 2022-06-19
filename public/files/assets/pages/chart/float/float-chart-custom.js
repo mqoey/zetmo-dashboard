@@ -7,7 +7,7 @@ $(document).ready(function() {
         pieChart();
         donutChart();
     });
-    
+
     categoryChart();
     strackingChart();
     pieChart();
@@ -42,7 +42,7 @@ $(document).ready(function() {
             labelBoxBorderColor: "red"
 
         });
-    };
+    }
 
     /*Stracking chart*/
     function strackingChart() {
@@ -85,7 +85,7 @@ $(document).ready(function() {
         }
 
         plotWithOptions();
-    };
+    }
 
 
 
@@ -115,7 +115,7 @@ $(document).ready(function() {
             }
         });
 
-    };
+    }
 
 
     /*Donut Hole*/

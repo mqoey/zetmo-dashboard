@@ -4,45 +4,54 @@ namespace App\Http\Controllers;
 
 use App\Models\Tarrif;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class TarrifController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
-        return view('tarrifs');
+        $old_tarrif = Tarrif::where('update_id', 2)->first();
+        $new_tarrif = Tarrif::where('update_id', 1)->first();
+        return view('tarrifs')
+            ->with('old_tarrif', $old_tarrif)
+            ->with('new_tarrif', $new_tarrif);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
-        //
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
-        //
+        if(Tarrif::create($request->all())){
+            DB::table('tarrifs')->increment('update_id', 1);
+            return back()->with('success',"Tarrif has been updated!!");
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tarrif  $tarrif
-     * @return \Illuminate\Http\Response
+     * @param Tarrif $tarrif
+     * @return Response
      */
     public function show(Tarrif $tarrif)
     {
@@ -52,8 +61,8 @@ class TarrifController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tarrif  $tarrif
-     * @return \Illuminate\Http\Response
+     * @param Tarrif $tarrif
+     * @return Response
      */
     public function edit(Tarrif $tarrif)
     {
@@ -63,20 +72,20 @@ class TarrifController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tarrif  $tarrif
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Tarrif $tarrif
+     * @return Response
      */
     public function update(Request $request, Tarrif $tarrif)
     {
-        //
+        dd($request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tarrif  $tarrif
-     * @return \Illuminate\Http\Response
+     * @param Tarrif $tarrif
+     * @return Response
      */
     public function destroy(Tarrif $tarrif)
     {

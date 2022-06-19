@@ -72,6 +72,7 @@
                                                                 <th>Address</th>
                                                                 <th>Meter Number</th>
                                                                 <th>Token number</th>
+                                                                <th>Power Bought</th>
                                                                 <th>Amount Paid</th>
                                                             </tr>
                                                         </thead>
@@ -83,6 +84,7 @@
                                                                     <td>{{ $token->client->address }}</td>
                                                                     <td>{{ $token->client->meter_number }}</td>
                                                                     <td>{{ $token->token_number }}</td>
+                                                                    <td>{{ $token->power_bought }}</td>
                                                                     <td>{{ $token->amount_paid }}</td>
                                                                 </tr>
                                                             @endforeach
@@ -94,6 +96,7 @@
                                                                 <th>Address</th>
                                                                 <th>Meter Number</th>
                                                                 <th>Token number</th>
+                                                                <th>Power Bought</th>
                                                                 <th>Amount Paid</th>
                                                             </tr>
                                                         </tfoot>

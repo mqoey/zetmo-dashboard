@@ -16,6 +16,7 @@ class CreateTarrifsTable extends Migration
         Schema::create('tarrifs', function (Blueprint $table) {
             $table->id();
             $table->string('price');
+            $table->integer('update_id')->default(0);
             $table->timestamps();
         });
     }

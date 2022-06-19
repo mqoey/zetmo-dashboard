@@ -71,7 +71,7 @@ $( document ).ready(function() {
                 $('body').attr("themebg-pattern", "theme1");
             }
         });
-    };
+    }
     handlelayouttheme();
 
     /* Left header Theme Change function Start */
@@ -80,7 +80,7 @@ $( document ).ready(function() {
             var lheadertheme = $(this).attr("menu-caption");
             $('.pcoded-navigation-label').attr("menu-title-theme", lheadertheme);
         });
-    };
+    }
     handleleftheadertheme();
     /* Left header Theme Change function Close */
     /* header Theme Change function Start */
@@ -97,7 +97,7 @@ $( document ).ready(function() {
                 $('.pcoded-navbar').attr("active-item-theme", "theme1");
             }
         });
-    };
+    }
     handleheaderthemefull();
     function handleheadertheme() {
         $('.theme-color > a.header-theme').on("click", function() {
@@ -111,7 +111,7 @@ $( document ).ready(function() {
                 $('.pcoded-navbar').attr("active-item-theme", "theme1");
             }
         });
-    };
+    }
     handleheadertheme();
     /* header Theme Change function Close */
     /* Navbar Theme Change function Start */
@@ -126,7 +126,7 @@ $( document ).ready(function() {
                 $('.pcoded-navigation-label').attr("menu-title-theme", "theme1");
             }
         });
-    };
+    }
 
     handlenavbartheme();
     /* Navbar Theme Change function Close */
@@ -136,7 +136,7 @@ $( document ).ready(function() {
             var activeitemtheme = $(this).attr("active-item-theme");
             $('.pcoded-navbar').attr("active-item-theme", activeitemtheme);
         });
-    };
+    }
 
     handleactiveitemtheme();
     /* Active Item Theme Change function Close */
@@ -147,7 +147,7 @@ $( document ).ready(function() {
             var themebgpattern = $(this).attr("themebg-pattern");
             $('body').attr("themebg-pattern", themebgpattern);
         });
-    };
+    }
 
     handlethemebgpattern();
     /* Theme background pattren Change function Close */
@@ -164,7 +164,7 @@ $( document ).ready(function() {
                 $('#bg-pattern-visiblity').addClass('d-none');
             }
         });
-    };
+    }
     handlethemeverticallayout();
     /* Theme Layout Change function Close*/
     /* Menu effect change function start*/
@@ -173,7 +173,7 @@ $( document ).ready(function() {
             get_value = $(this).val();
             $('.pcoded').attr('vertical-effect', get_value);
         });
-    };
+    }
 
     handleverticalMenueffect();
     /* Menu effect change function Close*/
@@ -184,7 +184,7 @@ $( document ).ready(function() {
             get_value = $(this).val();
             $('.pcoded-navbar .pcoded-item').attr('item-border-style', get_value);
         });
-    };
+    }
 
     handleverticalboderstyle();
     /* Vertical Item border Style change function Close*/
@@ -195,7 +195,7 @@ $( document ).ready(function() {
             get_value = $(this).val();
             $('.pcoded-navbar .pcoded-hasmenu').attr('dropdown-icon', get_value);
         });
-    };
+    }
 
     handleVerticalDropDownIconStyle();
     /* Vertical Dropdown Icon change function Close*/
@@ -206,7 +206,7 @@ $( document ).ready(function() {
             get_value = $(this).val();
             $('.pcoded-navbar .pcoded-hasmenu').attr('subitem-icon', get_value);
         });
-    };
+    }
 
     handleVerticalSubMenuItemIconStyle();
     /* Vertical SubItem Icon change function Close*/
@@ -221,7 +221,7 @@ $( document ).ready(function() {
                 $('.pcoded-header .pcoded-left-header').attr("pcoded-lheader-position", 'relative');
             }
         });
-    };
+    }
 
     handlesidebarposition();
     /* Vertical Navbar Position change function Close*/
@@ -238,7 +238,7 @@ $( document ).ready(function() {
                 $('.pcoded-main-container').css('margin-top', '0px');
             }
         });
-    };
+    }
     handleheaderposition();
     /* Vertical Header Position change function Close*/
     /*  collapseable Left Header Change Function Start here*/
@@ -252,12 +252,12 @@ $( document ).ready(function() {
                 $('.pcoded-header, .pcoded').removeClass('nocollapsed');
             }
         });
-    };
+    }
     handlecollapseLeftHeader();
     /*  collapseable Left Header Change Function Close here*/
 });
 function handlemenutype(get_value) {
 	$('.pcoded').attr('nav-type', get_value);
-};
+}
 
 handlemenutype("st2");

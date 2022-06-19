@@ -437,7 +437,7 @@ if (!window.CanvasRenderingContext2D) {
     this.miterLimit = 10;
     this.globalAlpha = 1;
     this.canvas = surfaceElement;
-  };
+  }
 
 
   var contextPrototype = CanvasRenderingContext2D_.prototype;
@@ -484,7 +484,7 @@ if (!window.CanvasRenderingContext2D) {
   };
 
   contextPrototype.arcTo = function(x1, y1, x2, y2, radius) {
-    if (this.currentPath_.length == 0) return;
+    if (this.currentPath_.length == 0)
     // TODO: Implement
   };
 
@@ -677,7 +677,7 @@ if (!window.CanvasRenderingContext2D) {
   function setM(self, m) {
     self.m_ = m;
     self.lastCanvas_ = null;
-  };
+  }
 
   contextPrototype.save = function() {
     var o = {};

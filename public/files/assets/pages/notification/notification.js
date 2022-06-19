@@ -23,15 +23,15 @@ $(window).on('load',function(){
                 y: 30
             }
         });
-    };
+    }
 
-   
+
         notify('Welcome to Notification page', 'inverse');
-   
+
 });
 
 $(document).ready(function() {
-   
+
     /*--------------------------------------
          Notifications & Dialogs
      ---------------------------------------*/
@@ -78,7 +78,7 @@ $(document).ready(function() {
             '<a href="#" data-growl="url"></a>' +
             '</div>'
         });
-    };
+    }
 
     $('.notifications .btn').on('click',function(e){
         e.preventDefault();
