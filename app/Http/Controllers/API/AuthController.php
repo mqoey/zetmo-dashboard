@@ -31,11 +31,12 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $email = $request->email;
+        $meter_number = $request->meter_number;
         $password = $request->password;
 
-        $clients = Client::where('email', $email)->get();
-        $client = Client::where('email', $email)->first();
+        $clients = Client::where('meter_number', $meter_number)->get();
+        $client = Client::where('meter_number', $meter_number)->first();
+
         if ($clients->count() > 0) {
             $encrypted = md5($password);
             if ($client->password == $encrypted) {
@@ -44,7 +45,7 @@ class AuthController extends Controller
                 return response()->json(['failed' => 'Wrong password'], 401);
             }
         } else {
-            return response()->json(['failed' => 'Wrong email address'], 401);
+            return response()->json(['failed' => 'Wrong meter number address'], 401);
         }
     }
 }
