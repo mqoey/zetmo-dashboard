@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description"
-        content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+        content="Electricity monitoring system" />
     <meta name="keywords"
-        content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
-    <meta name="author" content="colorlib" />
+        content="electricity, electricity-price, electricity-consumption" />
+    <meta name="author" content="mqographics" />
 
     <link rel="icon" href="{{ asset('files/assets/images/favicon.ico') }}" type="image/x-icon">
 
