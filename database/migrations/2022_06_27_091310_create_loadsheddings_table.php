@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAreasTable extends Migration
+class CreateLoadsheddingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('areas', function (Blueprint $table) {
+        Schema::create('loadsheddings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('municipality_id')->constrained('municipalities');
+            $table->foreignId('stage_id')->constrained('stages');
+            $table->foreignId('area_id')->constrained('areas');
+            $table->string('day');
+            $table->string('off');
+            $table->string('on');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateAreasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('areas');
+        Schema::dropIfExists('loadsheddings');
     }
 }

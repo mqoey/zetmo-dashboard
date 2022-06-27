@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Area;
-use App\Models\Loadshedding;
 use App\Models\Municipality;
-use App\Models\Stage;
+use App\Models\Neighbourhood;
 use Illuminate\Http\Request;
 
-class LoadsheddingController extends Controller
+class NeighbourhoodController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class LoadsheddingController extends Controller
      */
     public function index()
     {
-        return view('loadshedding.index')
-        ->with('loadsheddings', Loadshedding::all());
+        return view('neighbourhoods.index')
+            ->with('neighbourhoods', Neighbourhood::all());
     }
 
     /**
@@ -28,9 +27,9 @@ class LoadsheddingController extends Controller
      */
     public function create()
     {
-        return view('loadshedding.create')
-        ->with('areas', "")
-        ->with('municipalities', Municipality::all());
+        return view('neighbourhoods.create')
+            ->with('areas', "")
+            ->with('municipalities', Municipality::all());
     }
 
     /**
@@ -41,30 +40,30 @@ class LoadsheddingController extends Controller
      */
     public function store(Request $request)
     {
+
         $area_id = $request->area_id;
         $municipality_id = $request->municipality_id;
 
         if (!$area_id) {
             $areas = Area::where('municipality_id', $municipality_id)->get();
             $municipality = Municipality::where('id', $municipality_id)->first();
-            return view('loadshedding.create')
+            return view('neighbourhoods.create')
                 ->with('municipality', $municipality)
-                ->with('stages', Stage::all())
                 ->with('areas', $areas);
         }
 
-        if (Loadshedding::create($request->all())) {
-            return back()->with('success', "Load shed has been added!!");
+        if (Neighbourhood::create($request->all())) {
+            return back()->with('success', "Neighbourhood has been added!!");
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Loadshedding  $loadshedding
+     * @param  \App\Models\Neighbourhood  $neighbourhood
      * @return \Illuminate\Http\Response
      */
-    public function show(Loadshedding $loadshedding)
+    public function show(Neighbourhood $neighbourhood)
     {
         //
     }
@@ -72,10 +71,10 @@ class LoadsheddingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Loadshedding  $loadshedding
+     * @param  \App\Models\Neighbourhood  $neighbourhood
      * @return \Illuminate\Http\Response
      */
-    public function edit(Loadshedding $loadshedding)
+    public function edit(Neighbourhood $neighbourhood)
     {
         //
     }
@@ -84,10 +83,10 @@ class LoadsheddingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Loadshedding  $loadshedding
+     * @param  \App\Models\Neighbourhood  $neighbourhood
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Loadshedding $loadshedding)
+    public function update(Request $request, Neighbourhood $neighbourhood)
     {
         //
     }
@@ -95,10 +94,10 @@ class LoadsheddingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Loadshedding  $loadshedding
+     * @param  \App\Models\Neighbourhood  $neighbourhood
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Loadshedding $loadshedding)
+    public function destroy(Neighbourhood $neighbourhood)
     {
         //
     }

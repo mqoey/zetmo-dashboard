@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <title>ZETMO | Clients</title>
+    <title>ZETMO | Areas</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -64,7 +64,7 @@
                                     <div class="page-body">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5>Clients</h5>
+                                                <h5>Areas</h5>
 
                                             </div>
                                             <div class="card-block">
@@ -73,28 +73,22 @@
                                                         class="table table-striped table-bordered nowrap">
                                                         <thead>
                                                             <tr>
+                                                                <th>Municipality</th>
                                                                 <th>Name</th>
-                                                                <th>Email</th>
-                                                                <th>Address</th>
-                                                                <th>Meter Number</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            @foreach ($clients as $client)
+                                                            @foreach ($areas as $area)
                                                                 <tr>
-                                                                    <td>{{ $client->name }}</td>
-                                                                    <td>{{ $client->email }}</td>
-                                                                    <td>{{ $client->address }}</td>
-                                                                    <td>{{ $client->meter_number }}</td>
+                                                                    <td>{{ $area->municipality->name }}</td>
+                                                                    <td>{{ $area->name }}</td>
                                                                 </tr>
                                                             @endforeach
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
+                                                                <th>Municipality</th>
                                                                 <th>Name</th>
-                                                                <th>Email</th>
-                                                                <th>Address</th>
-                                                                <th>Meter Number</th>
                                                             </tr>
                                                         </tfoot>
                                                     </table>

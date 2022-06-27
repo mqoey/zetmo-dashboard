@@ -10,4 +10,12 @@ class Area extends Model
     use HasFactory;
 
     protected $guarded=[];
+
+    public function municipality(){
+        return $this->belongsTo(Municipality::class);
+    }
+
+    public function neighbourhood(){
+        return $this->hasMany(Neighbourhood::class);
+    }
 }

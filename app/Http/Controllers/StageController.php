@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Municipality;
+use App\Models\Stage;
 use Illuminate\Http\Request;
 
-class MunicipalityController extends Controller
+class StageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class MunicipalityController extends Controller
      */
     public function index()
     {
-        return view('municipalities.index')
-            ->with('municipalities', Municipality::all());
+        return view('stages.index')
+        ->with('stages', Stage::all());
     }
 
     /**
@@ -25,7 +25,7 @@ class MunicipalityController extends Controller
      */
     public function create()
     {
-        return view('municipalities.create');
+        return view('stages.create');
     }
 
     /**
@@ -36,18 +36,18 @@ class MunicipalityController extends Controller
      */
     public function store(Request $request)
     {
-        if(Municipality::create($request->all())){
-            return back()->with('success',"Municipality has been added!!");
+        if(Stage::create($request->all())){
+            return back()->with('success',"Stage has been added!!");
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Municipality  $municipality
+     * @param  \App\Models\Stage  $stage
      * @return \Illuminate\Http\Response
      */
-    public function show(Municipality $municipality)
+    public function show(Stage $stage)
     {
         //
     }
@@ -55,10 +55,10 @@ class MunicipalityController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Municipality  $municipality
+     * @param  \App\Models\Stage  $stage
      * @return \Illuminate\Http\Response
      */
-    public function edit(Municipality $municipality)
+    public function edit(Stage $stage)
     {
         //
     }
@@ -67,10 +67,10 @@ class MunicipalityController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Municipality  $municipality
+     * @param  \App\Models\Stage  $stage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Municipality $municipality)
+    public function update(Request $request, Stage $stage)
     {
         //
     }
@@ -78,10 +78,10 @@ class MunicipalityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Municipality  $municipality
+     * @param  \App\Models\Stage  $stage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Municipality $municipality)
+    public function destroy(Stage $stage)
     {
         //
     }

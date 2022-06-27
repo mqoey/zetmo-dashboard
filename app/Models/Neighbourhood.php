@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Loadshedding extends Model
+class Neighbourhood extends Model
 {
     use HasFactory;
 
@@ -13,9 +13,5 @@ class Loadshedding extends Model
 
     public function area(){
         return $this->belongsTo(Area::class);
-    }
-
-    public function stage(){
-        return $this->belongsTo(Stage::class);
     }
 }

@@ -65,11 +65,7 @@
                                         <div class="card">
                                             <div class="card-header">
                                                 <h5>Users</h5>
-                                                <span>Events assigned to the table can be exceptionally useful for user
-                                                    interaction, however you must be aware that DataTables will add and
-                                                    remove rows from the DOM as they are needed (i.e. when paging only
-                                                    the visible elements are actually available in the DOM). As such,
-                                                    this can lead to the odd hiccup when working with events.</span>
+
                                             </div>
                                             <div class="card-block">
                                                 <div class="table-responsive dt-responsive">

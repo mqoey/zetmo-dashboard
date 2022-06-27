@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <title>ZETMO | Clients</title>
+    <title>ZETMO | Municipalities</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -64,37 +64,65 @@
                                     <div class="page-body">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5>Clients</h5>
-
+                                                <h5>Load Shedding</h5>
                                             </div>
+                                            @if (session()->has('success'))
+                                                <div class="alert alert-success background-success">
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                        <i class="icofont icofont-close-line-circled text-white"></i>
+                                                    </button>
+                                                    <strong>Success!</strong> {{ session()->get('success') }}
+                                                </div>
+                                            @endif
+                                            @if (session()->has('failed'))
+                                                <div class="alert alert-danger background-danger">
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                        <i class="icofont icofont-close-line-circled text-white"></i>
+                                                    </button>
+                                                    <strong>Failed!</strong> {{ session()->get('failed') }}
+                                                </div>
+                                            @endif
                                             <div class="card-block">
                                                 <div class="table-responsive dt-responsive">
                                                     <table id="dom-jqry"
                                                         class="table table-striped table-bordered nowrap">
                                                         <thead>
                                                             <tr>
-                                                                <th>Name</th>
-                                                                <th>Email</th>
-                                                                <th>Address</th>
-                                                                <th>Meter Number</th>
+                                                                <th>Municipality</th>
+                                                                <th>Area</th>
+                                                                <th>Stage</th>
+                                                                <th>Switch on</th>
+                                                                <th>Switch off</th>
+                                                                <th>Neighbourhoods</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            @foreach ($clients as $client)
+                                                            @foreach ($loadsheddings as $loadshedding)
                                                                 <tr>
-                                                                    <td>{{ $client->name }}</td>
-                                                                    <td>{{ $client->email }}</td>
-                                                                    <td>{{ $client->address }}</td>
-                                                                    <td>{{ $client->meter_number }}</td>
+                                                                    <td>{{ $loadshedding->area->municipality->name }}
+                                                                    </td>
+                                                                    <td>{{ $loadshedding->area->name }}</td>
+                                                                    <td>Stage {{ $loadshedding->stage->name }}</td>
+                                                                    <td>{{ $loadshedding->on }}</td>
+                                                                    <td>{{ $loadshedding->off }}</td>
+                                                                    <td>
+                                                                        @foreach ($loadshedding->area->neighbourhood as $neighbour)
+                                                                            <span>{{ $neighbour->name }},</span>
+                                                                        @endforeach
+                                                                    </td>
                                                                 </tr>
                                                             @endforeach
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
-                                                                <th>Name</th>
-                                                                <th>Email</th>
-                                                                <th>Address</th>
-                                                                <th>Meter Number</th>
+                                                                <th>Municipality</th>
+                                                                <th>Area</th>
+                                                                <th>Stage</th>
+                                                                <th>Switch on</th>
+                                                                <th>Switch off</th>
+                                                                <th>Neighbourhoods</th>
                                                             </tr>
                                                         </tfoot>
                                                     </table>

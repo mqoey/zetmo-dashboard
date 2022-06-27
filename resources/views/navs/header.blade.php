@@ -30,11 +30,11 @@
                         </div>
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn"
                             data-dropdown-out="fadeOut">
-                            <li>
+                            {{-- <li>
                                 <a href="#">
                                     <i class="feather icon-user"></i> Profile
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf

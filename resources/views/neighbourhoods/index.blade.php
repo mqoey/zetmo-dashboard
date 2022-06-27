@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <title>ZETMO | Clients</title>
+    <title>ZETMO | Neighbourhoods</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -64,9 +64,25 @@
                                     <div class="page-body">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5>Clients</h5>
+                                                <h5>Neighbourhoods</h5>
 
                                             </div>
+                                            @if (session()->has('success'))
+                                    <div class="alert alert-success background-success">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="icofont icofont-close-line-circled text-white"></i>
+                                        </button>
+                                        <strong>Success!</strong> {{ session()->get('success') }}
+                                    </div>
+                                @endif
+                                @if (session()->has('failed'))
+                                    <div class="alert alert-danger background-danger">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="icofont icofont-close-line-circled text-white"></i>
+                                        </button>
+                                        <strong>Failed!</strong> {{ session()->get('failed') }}
+                                    </div>
+                                @endif
                                             <div class="card-block">
                                                 <div class="table-responsive dt-responsive">
                                                     <table id="dom-jqry"
@@ -74,27 +90,24 @@
                                                         <thead>
                                                             <tr>
                                                                 <th>Name</th>
-                                                                <th>Email</th>
-                                                                <th>Address</th>
-                                                                <th>Meter Number</th>
+                                                                <th>Area</th>
+                                                                <th>Municipality</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            @foreach ($clients as $client)
+                                                            @foreach ($neighbourhoods as $neighbourhood)
                                                                 <tr>
-                                                                    <td>{{ $client->name }}</td>
-                                                                    <td>{{ $client->email }}</td>
-                                                                    <td>{{ $client->address }}</td>
-                                                                    <td>{{ $client->meter_number }}</td>
+                                                                    <td>{{ $neighbourhood->name }}</td>
+                                                                    <td>{{ $neighbourhood->area->name }}</td>
+                                                                    <td>{{ $neighbourhood->area->municipality->name }}</td>
                                                                 </tr>
                                                             @endforeach
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
                                                                 <th>Name</th>
-                                                                <th>Email</th>
-                                                                <th>Address</th>
-                                                                <th>Meter Number</th>
+                                                                <th>Area</th>
+                                                                <th>Municipality</th>
                                                             </tr>
                                                         </tfoot>
                                                     </table>
@@ -145,5 +158,4 @@
     <script src="{{ asset('files/assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('files/assets/js/script.js') }}"></script>
 </body>
-
 </html>

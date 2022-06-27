@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Area;
+use App\Models\Municipality;
 use Illuminate\Http\Request;
 
 class AreaController extends Controller
@@ -14,7 +15,8 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //
+        return view('areas.index')
+            ->with('areas', Area::all());
     }
 
     /**
@@ -24,7 +26,8 @@ class AreaController extends Controller
      */
     public function create()
     {
-        //
+        return view('areas.create')
+            ->with('municipalities', Municipality::all());
     }
 
     /**
@@ -35,7 +38,9 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Area::create($request->all())){
+            return back()->with('success',"Area has been added!!");
+        }
     }
 
     /**
