@@ -109,7 +109,7 @@
                                         <h3 class="text-center txt-primary">Sign In</h3>
                                     </div>
                                 </div>
-                                <div class="row m-b-20">
+                                {{-- <div class="row m-b-20">
                                     <div class="col-md-6">
                                         <button class="btn btn-facebook m-b-20 btn-block"><i
                                                 class="icofont icofont-social-facebook"></i>facebook</button>
@@ -118,7 +118,7 @@
                                         <button class="btn btn-twitter m-b-20 btn-block"><i
                                                 class="icofont icofont-social-twitter"></i>twitter</button>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <p class="text-muted text-center p-b-5">Sign in with your regular account</p>
                                 <!-- Session Status -->
                                 <x-auth-session-status class="mb-4" style="color: red" :status="session('status')" />

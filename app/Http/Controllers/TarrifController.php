@@ -9,16 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class TarrifController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function api()
-    {
-        $new_tarrif = Tarrif::where('update_id', 1)->pluck('price')->first();
-        return response()->json(['tarrif' => $new_tarrif], 200);
-    }
 
     /**
      * Display a listing of the resource.

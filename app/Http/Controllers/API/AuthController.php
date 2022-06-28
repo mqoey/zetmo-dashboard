@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\NeighbourhoodResource;
 use App\Models\Client;
+use App\Models\Neighbourhood;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -44,13 +46,8 @@ class AuthController extends Controller
                     'meter_number' => $meter_number,
                 ]
             )) {
-                return response()->json(
-                    [
-                        'success' => 'User Registered',
-                        $client
-                    ],
-                    200
-                );
+                return response()->json($client, 200);
+
             } else {
                 return response()->json(
                     [
@@ -101,8 +98,7 @@ class AuthController extends Controller
             )) {
                 return response()->json(
                     [
-                        'success' => 'User Registered',
-                        $client
+                        Neighbourhood::all()
                     ],
                     200
                 );
