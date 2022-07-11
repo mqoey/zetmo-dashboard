@@ -13,4 +13,5 @@ Route::post('registerhome', [AuthController::class, 'registerhome']);
 Route::get('neighbourhoods', [NeighbourhoodController::class, 'index']);
 Route::post('clientneighbourhood', [NeighbourhoodController::class, 'store']);
 Route::get('tokens', [TokenController::class, 'getTokens']);
+Route::post('purchasetoken', [TokenController::class, 'purchaseToken']);
 Route::post('tokens', [TokenController::class, 'useToken']);
