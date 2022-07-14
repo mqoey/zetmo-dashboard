@@ -15,5 +15,6 @@ Route::get('neighbourhoods', [NeighbourhoodController::class, 'index']);
 Route::post('clientneighbourhood', [NeighbourhoodController::class, 'store']);
 Route::get('clientneighbourhood', [NeighbourhoodController::class, 'client']);
 Route::get('tokens', [TokenController::class, 'getTokens']);
+Route::post('purchasetoken', [TokenController::class, 'purchaseToken']);
 Route::post('tokens', [TokenController::class, 'useToken']);
 Route::post('send-notification', [NotificationController::class, 'send']);
