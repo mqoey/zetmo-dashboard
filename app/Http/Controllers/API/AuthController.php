@@ -14,6 +14,7 @@ class AuthController extends Controller
     {
         $name = $request->first_name . " " . $request->last_name;
         $email = $request->email;
+        $fcm_token = $request->fcm_token;
         $password = md5($request->password);
         $address = $request->address;
         $meter_number = $request->meter_number;
@@ -44,6 +45,7 @@ class AuthController extends Controller
                     'password' => $password,
                     'address' => $address,
                     'meter_number' => $meter_number,
+                    'fcm_token' => $fcm_token,
                 ]
             )) {
                 return response()->json($client, 200);

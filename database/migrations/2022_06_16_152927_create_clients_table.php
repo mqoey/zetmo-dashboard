@@ -20,6 +20,7 @@ class CreateClientsTable extends Migration
             $table->string('password');
             $table->string('address');
             $table->string('meter_number')->unique();
+            $table->string('fcm_token')->nullable();
             $table->timestamps();
         });
     }

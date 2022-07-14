@@ -100,7 +100,7 @@
                     <form class="md-float-material form-material" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="text-center">
-                            <h4 style="color: white">ZETCO</h4>
+                            <h4 style="color: white">ZETMO</h4>
                         </div>
                         <div class="auth-box card">
                             <div class="card-block">

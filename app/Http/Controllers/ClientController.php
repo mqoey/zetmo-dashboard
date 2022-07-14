@@ -6,6 +6,7 @@ use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Helper\Tokenable;
+use App\Services\FCMService;
 
 class ClientController extends Controller
 {
@@ -99,5 +100,17 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         //
+    }
+
+    public function sendNotification($id)
+    {
+        $client = Client::findOrFail($id);
+
+        FCMService::send(
+            $client->fcm_token,[
+                'title' => 'test from Zetmo',
+                'body' => 'Hie this is a test from Zetmo',
+            ]
+        );
     }
 }

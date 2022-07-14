@@ -9,5 +9,14 @@ class ClientNeighbourhood extends Model
 {
     use HasFactory;
 
-    protected $guarded=[];
+    protected $guarded = [];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+    public function neighbourhood(){
+        return $this->belongsTo(Neighbourhood::class);
+    }
 }

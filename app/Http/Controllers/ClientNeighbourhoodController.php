@@ -14,7 +14,8 @@ class ClientNeighbourhoodController extends Controller
      */
     public function index()
     {
-        //
+        return view('clientneighbourhood.index')
+        ->with("neighbourhoods", ClientNeighbourhood::all());
     }
 
     /**
