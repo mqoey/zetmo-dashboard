@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\ClientNeighbourhoodResource;
 use App\Http\Resources\NeighbourhoodResource;
 use App\Models\ClientNeighbourhood;
+use App\Models\Loadshedding;
 use App\Models\Neighbourhood;
+use App\Models\Stage;
 use Illuminate\Http\Request;
 
 class NeighbourhoodController extends Controller
@@ -35,5 +37,13 @@ class NeighbourhoodController extends Controller
         // return response()->json([$neighbourhood],200);
 
         return ClientNeighbourhoodResource::collection($neighbourhood);
+    }
+
+    public function stage(Request $request)
+    {
+        $neighbourhood_id = $request->neighbourhood_id;
+        $area = Neighbourhood::where('id', $neighbourhood_id)->pluck('area_id')->first();
+        $stage = Loadshedding::where('area_id', $area)->get();
+        return response()->json($stage, 200);
     }
 }

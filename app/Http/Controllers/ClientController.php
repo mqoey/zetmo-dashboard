@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Helper\Tokenable;
 use App\Services\FCMService;
 
 class ClientController extends Controller

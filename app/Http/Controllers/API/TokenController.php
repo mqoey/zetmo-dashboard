@@ -45,12 +45,14 @@ class TokenController extends Controller
 
     public function useToken(Request $request)
     {
+        $tokens = Token::where('id', $request->token_id)->get();
         $token_id = $request->token_id;
         $token = Token::find($token_id);
         if ($token->update([
             'status' => '1',
         ])) {
-            // return TokenResource::collection($token);
+            // return response()->json($token, 200);
+            return TokenResource::collection($tokens);
         } else {
             return response()->json(['failed' => 'Electricity did\'nt topup'], 202);
         }
