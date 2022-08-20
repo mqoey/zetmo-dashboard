@@ -19,3 +19,4 @@ Route::get('tokens', [TokenController::class, 'getTokens']);
 Route::post('purchasetoken', [TokenController::class, 'purchaseToken']);
 Route::post('useToken', [TokenController::class, 'useToken']);
 Route::post('send-notification', [NotificationController::class, 'send']);
+Route::get('neighbourhoodsearch', [NeighbourhoodController::class, 'search']);

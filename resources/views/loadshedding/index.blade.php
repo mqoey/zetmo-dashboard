@@ -93,8 +93,8 @@
                                                                 <th>Municipality</th>
                                                                 <th>Area</th>
                                                                 <th>Stage</th>
-                                                                <th>Switch off</th>
-                                                                <th>Switch on</th>
+                                                                {{-- <th>Switch off</th>
+                                                                <th>Switch on</th> --}}
                                                                 <th>Neighbourhoods</th>
                                                             </tr>
                                                         </thead>
@@ -105,8 +105,8 @@
                                                                     </td>
                                                                     <td>{{ $loadshedding->area->name }}</td>
                                                                     <td>Stage {{ $loadshedding->stage->name }}</td>
-                                                                    <td>{{ $loadshedding->off }}</td>
-                                                                    <td>{{ $loadshedding->on }}</td>
+                                                                    {{-- <td>{{ $loadshedding->off }}</td>
+                                                                    <td>{{ $loadshedding->on }}</td> --}}
                                                                     <td>
                                                                         @foreach ($loadshedding->area->neighbourhood as $neighbour)
                                                                             <span>{{ $neighbour->name }},</span>
@@ -120,8 +120,8 @@
                                                                 <th>Municipality</th>
                                                                 <th>Area</th>
                                                                 <th>Stage</th>
-                                                                <th>Switch off</th>
-                                                                <th>Switch on</th>
+                                                                {{-- <th>Switch off</th>
+                                                                <th>Switch on</th> --}}
                                                                 <th>Neighbourhoods</th>
                                                             </tr>
                                                         </tfoot>
