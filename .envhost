@@ -11,8 +11,8 @@ LOG_LEVEL=debug
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=fkultima_zetmo
-DB_USERNAME=fkultima_zetmo
+DB_DATABASE=zapuorg1_zetmo
+DB_USERNAME=zapuorg1_zetmo
 DB_PASSWORD=zetmo2022!!
 
 BROADCAST_DRIVER=log

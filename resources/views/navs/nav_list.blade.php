@@ -65,6 +65,15 @@
                     </ul>
                 </li>
 
+                <li class="">
+                    <a href="{{ route('notifications') }}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-command"></i>
+                        </span>
+                        <span class="pcoded-mtext">Send Notifications</span>
+                    </a>
+                </li>
+
             <div class="pcoded-navigation-label">Management</div>
             <ul class="pcoded-item pcoded-left-item">
 

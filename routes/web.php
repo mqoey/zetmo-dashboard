@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoadsheddingController;
 use App\Http\Controllers\MunicipalityController;
 use App\Http\Controllers\NeighbourhoodController;
+use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\StageController;
 use App\Http\Controllers\TarrifController;
 use App\Http\Controllers\TokenController;
@@ -27,6 +28,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('loadsheddings', LoadsheddingController::class);
     Route::get('tarrifs', [TarrifController::class, 'index'])->name('tarrifs');
     Route::post('tarrifs', [TarrifController::class, 'store'])->name('tarrifs');
+    Route::get('notifications', [NotificationsController::class, 'index'])->name('notifications');
+    Route::post('notifications', [NotificationsController::class, 'sendPush'])->name('notifications.store');
 });
 
 require __DIR__.'/auth.php';
